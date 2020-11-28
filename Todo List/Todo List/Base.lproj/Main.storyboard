@@ -19,7 +19,7 @@
                                 <rect key="frame" x="0.0" y="212" width="414" height="621"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="DetailsTask" id="KZw-v9-Rbc">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="DetailsTask" id="KZw-v9-Rbc">
                                         <rect key="frame" x="0.0" y="28" width="414" height="43.5"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="KZw-v9-Rbc" id="B6R-hD-0qj">
@@ -58,9 +58,6 @@
                                     <constraint firstAttribute="height" constant="24" id="ZM1-8o-qaj"/>
                                 </constraints>
                                 <state key="normal" backgroundImage="Add"/>
-                                <connections>
-                                    <segue destination="YgK-Hj-yjM" kind="presentation" id="Moe-to-kgP"/>
-                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
@@ -100,7 +97,7 @@
                                 <rect key="frame" x="0.0" y="469" width="414" height="216"/>
                             </datePicker>
                             <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="eul-MH-nkn">
-                                <rect key="frame" x="335" y="444" width="49" height="31"/>
+                                <rect key="frame" x="335" y="444" width="51" height="31"/>
                             </switch>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Has Due Date" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rvJ-9v-6m2">
                                 <rect key="frame" x="30" y="454" width="131" height="27"/>
@@ -109,7 +106,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="6Ww-hY-6Xg">
-                                <rect key="frame" x="337" y="693" width="49" height="31"/>
+                                <rect key="frame" x="337" y="693" width="51" height="31"/>
                             </switch>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Completed Task" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wE6-sB-del">
                                 <rect key="frame" x="30" y="697" width="154" height="27"/>
@@ -188,15 +185,13 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="0hy-cp-rds"/>
                     </view>
+                    <value key="contentSizeForViewInPopover" type="size" width="414" height="842"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ouX-R5-TJJ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1002.8985507246377" y="137.94642857142856"/>
         </scene>
     </scenes>
-    <inferredMetricsTieBreakers>
-        <segue reference="Mow-P6-n41"/>
-    </inferredMetricsTieBreakers>
     <resources>
         <image name="Add" width="30" height="30"/>
         <image name="Cancel" width="30" height="30"/>

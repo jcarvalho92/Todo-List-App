@@ -17,7 +17,12 @@ class TasksCellTableViewCell: UITableViewCell {
     var dueLabel: UILabel!
     var forwardButton: UIButton!
     var unCheckedButton: UIButton!
-    var checkedButton: UIButton!
+    var tapAction: ((UITableViewCell) -> Void)?
+    
+    @IBAction func buttonTap(sender: AnyObject){
+        tapAction?(self)
+        
+    }
 
     
     var task: String = "" {
@@ -62,7 +67,7 @@ class TasksCellTableViewCell: UITableViewCell {
          contentView.addSubview(dueMarker)
         
         let unCheckedImage = UIImage(named: "UnChecked")
-        let unCheckedButtonRect = CGRect(x: 300, y: 7, width: 46, height: 30)
+        let unCheckedButtonRect = CGRect(x: 340, y: 7, width: 30, height: 30)
         let unCheckedMarker = UIButton(frame: unCheckedButtonRect)
         unCheckedMarker.setBackgroundImage(unCheckedImage, for: UIControl.State.normal)
         unCheckedMarker.isPointerInteractionEnabled = true
@@ -70,25 +75,25 @@ class TasksCellTableViewCell: UITableViewCell {
   
         
          let forwardImage = UIImage(named: "Forward")
-         let forwardButtonRect = CGRect(x: 335, y: 7, width: 46, height: 30)
+         let forwardButtonRect = CGRect(x: 370, y: 7, width: 30, height: 30)
          let forwardMarker = UIButton(frame: forwardButtonRect)
          forwardMarker.setBackgroundImage(forwardImage, for: UIControl.State.normal)
          forwardMarker.isPointerInteractionEnabled = true
          contentView.addSubview(forwardMarker)
 
-         let taskValueRect = CGRect(x: 2, y: 5, width: 200, height: 15)
+         let taskValueRect = CGRect(x: 10, y: 5, width: 200, height: 15)
          taskLabel = UILabel(frame: taskValueRect)
          contentView.addSubview(taskLabel)
 
-         let dueValueRect = CGRect(x: 2, y: 25, width: 200, height: 15)
+         let dueValueRect = CGRect(x: 10, y: 25, width: 200, height: 15)
          dueLabel = UILabel(frame: dueValueRect)
          contentView.addSubview(dueLabel)
         
-        let unCheckedValueRect = CGRect(x: 300, y: 7, width: 46, height: 30)
+        let unCheckedValueRect = CGRect(x: 340, y: 7, width: 30, height: 30)
         unCheckedButton = UIButton(frame: unCheckedValueRect)
         contentView.addSubview(unCheckedButton)
 
-        let forwardValueRect = CGRect(x: 335, y: 7, width: 46, height: 30)
+        let forwardValueRect = CGRect(x: 370, y: 7, width: 30, height: 30)
         forwardButton = UIButton(frame: forwardValueRect)
         contentView.addSubview(forwardButton)
     }

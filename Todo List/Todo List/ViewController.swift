@@ -20,12 +20,13 @@ class ViewController: UIViewController , UITableViewDataSource  {
     */
     
     let cellTableIdentifier = "CellTableIdentifier"
-    
+    var checked = false
+    let  checkedImage = UIImage(named: "Checked")
     @IBOutlet var tableView:UITableView!
     let tasks = [
-        ["Task" : "Schedule annual checkup", "Due" : "Tuesday, Nov 17, 2020"],
+        ["Task" : "Schedule annual checkup", "Due" : "Completed"],
         ["Task" : "Plan my son's birthday", "Due" : "Wednesday, Nov 18, 2020"],
-        ["Task" : "Enroll in a gym", "Due" : "Thursday, Nov 19, 2020"],
+        ["Task" : "Enroll in a gym", "Due" : "Completed"],
         ["Task" : "Buy christmas gifts", "Due" : "Thursday, Nov 19, 2020"],
         ["Task" : "Book a flight for my mom", "Due" : "Friday, Nov 20, 2020"],
         ["Task" : "Buy a new microwave", "Due" : "Friday, Nov 20, 2020"],
@@ -58,12 +59,28 @@ class ViewController: UIViewController , UITableViewDataSource  {
         
         cell.taskLabel.font = UIFont.boldSystemFont(ofSize: 14)
         cell.dueLabel.font = UIFont.boldSystemFont(ofSize: 10)
+        
+        if (rowData["Due"] == "Completed"){
+            cell.unCheckedButton.setBackgroundImage(checkedImage, for: UIControl.State.normal)
+        }
 
+        cell.unCheckedButton.addTarget(self, action: #selector(taskChecked(sender:)), for: .touchUpInside)
+        cell.unCheckedButton.tag = indexPath.row
+        
         return cell
     }
+    
+    @objc func taskChecked(sender: UIButton){
+        sender.setBackgroundImage(checkedImage, for: UIControl.State.normal)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        // Get the new view controller using [segue destinationViewController].
+        // Pass the selected object to the new view controller.
+        let indexPath = tableView.indexPath(for: sender as! UITableViewCell)!
+        let details = segue.destination as! DetailsViewController
 
-
-
+    }
 
 }
 

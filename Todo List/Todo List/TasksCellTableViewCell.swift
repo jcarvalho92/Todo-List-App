@@ -5,26 +5,17 @@
 //  Created by Juliana de Carvalho on 2020-11-14.
 //  Copyright © 2020 Juliana de Carvalho. All rights reserved.
 //  Student Id: 30113760
-//  Version 1.0
-//  Build 1
+
 
 import UIKit
 
 class TasksCellTableViewCell: UITableViewCell {
 
-
     var taskLabel: UILabel!
     var dueLabel: UILabel!
     var forwardButton: UIButton!
     var unCheckedButton: UIButton!
-    var tapAction: ((UITableViewCell) -> Void)?
-    
-    @IBAction func buttonTap(sender: AnyObject){
-        tapAction?(self)
-        
-    }
 
-    
     var task: String = "" {
         didSet {
             if (task != oldValue) {
@@ -42,26 +33,22 @@ class TasksCellTableViewCell: UITableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
     }
 
-    
+    //creating the tableviewCell structure
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
          super.init(style: style, reuseIdentifier: reuseIdentifier )
 
-         let taskLabelRect = CGRect(x: 0, y: 5, width: 70, height: 15)
+         let taskLabelRect = CGRect(x: 20, y: 5, width: 70, height: 15)
          let taskMarker = UILabel(frame: taskLabelRect)
          taskMarker.textAlignment = NSTextAlignment.right
-         //The table view cell already has a UIView subview called contentView, which it uses to group all of its subviews.
          contentView.addSubview(taskMarker)
 
-         let dueLabelRect = CGRect(x: 0, y: 26, width: 70, height: 15)
+         let dueLabelRect = CGRect(x: 20, y: 26, width: 70, height: 15)
          let dueMarker = UILabel(frame: dueLabelRect)
          dueMarker.textAlignment = NSTextAlignment.right
          contentView.addSubview(dueMarker)
@@ -72,7 +59,6 @@ class TasksCellTableViewCell: UITableViewCell {
         unCheckedMarker.setBackgroundImage(unCheckedImage, for: UIControl.State.normal)
         unCheckedMarker.isPointerInteractionEnabled = true
         contentView.addSubview(unCheckedMarker)
-  
         
          let forwardImage = UIImage(named: "Forward")
          let forwardButtonRect = CGRect(x: 370, y: 7, width: 30, height: 30)
@@ -81,11 +67,11 @@ class TasksCellTableViewCell: UITableViewCell {
          forwardMarker.isPointerInteractionEnabled = true
          contentView.addSubview(forwardMarker)
 
-         let taskValueRect = CGRect(x: 10, y: 5, width: 200, height: 15)
+         let taskValueRect = CGRect(x: 20, y: 5, width: 200, height: 15)
          taskLabel = UILabel(frame: taskValueRect)
          contentView.addSubview(taskLabel)
 
-         let dueValueRect = CGRect(x: 10, y: 25, width: 200, height: 15)
+         let dueValueRect = CGRect(x: 20, y: 26, width: 200, height: 15)
          dueLabel = UILabel(frame: dueValueRect)
          contentView.addSubview(dueLabel)
         
@@ -97,7 +83,6 @@ class TasksCellTableViewCell: UITableViewCell {
         forwardButton = UIButton(frame: forwardValueRect)
         contentView.addSubview(forwardButton)
     }
-    
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")

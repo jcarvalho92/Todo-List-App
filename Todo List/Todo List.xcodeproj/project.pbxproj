@@ -15,6 +15,9 @@
 		C84885E1255EEA32009F06CD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C84885DF255EEA32009F06CD /* LaunchScreen.storyboard */; };
 		C84885EB25602425009F06CD /* TasksCellTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C84885EA25602425009F06CD /* TasksCellTableViewCell.swift */; };
 		C84885ED256038E8009F06CD /* DetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C84885EC256038E8009F06CD /* DetailsViewController.swift */; };
+		C89733D225731FAC00FDBE02 /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = C89733D125731FAC00FDBE02 /* libsqlite3.tbd */; };
+		C89734222574700600FDBE02 /* Todo.swift in Sources */ = {isa = PBXBuildFile; fileRef = C89734212574700600FDBE02 /* Todo.swift */; };
+		C8973424257478E800FDBE02 /* DBHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8973423257478E800FDBE02 /* DBHelper.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +31,10 @@
 		C84885E2255EEA32009F06CD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C84885EA25602425009F06CD /* TasksCellTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TasksCellTableViewCell.swift; sourceTree = "<group>"; };
 		C84885EC256038E8009F06CD /* DetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsViewController.swift; sourceTree = "<group>"; };
+		C89733D125731FAC00FDBE02 /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
+		C89733D32573204000FDBE02 /* Todo List-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Todo List-Bridging-Header.h"; sourceTree = "<group>"; };
+		C89734212574700600FDBE02 /* Todo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Todo.swift; sourceTree = "<group>"; };
+		C8973423257478E800FDBE02 /* DBHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DBHelper.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -35,6 +42,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C89733D225731FAC00FDBE02 /* libsqlite3.tbd in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -46,6 +54,8 @@
 			children = (
 				C84885D3255EEA31009F06CD /* Todo List */,
 				C84885D2255EEA31009F06CD /* Products */,
+				C89733D025731FAC00FDBE02 /* Frameworks */,
+				C89733D32573204000FDBE02 /* Todo List-Bridging-Header.h */,
 			);
 			sourceTree = "<group>";
 		};
@@ -61,6 +71,8 @@
 			isa = PBXGroup;
 			children = (
 				C84885D4255EEA31009F06CD /* AppDelegate.swift */,
+				C8973423257478E800FDBE02 /* DBHelper.swift */,
+				C89734212574700600FDBE02 /* Todo.swift */,
 				C84885D6255EEA31009F06CD /* SceneDelegate.swift */,
 				C84885D8255EEA31009F06CD /* ViewController.swift */,
 				C84885EA25602425009F06CD /* TasksCellTableViewCell.swift */,
@@ -71,6 +83,14 @@
 				C84885E2255EEA32009F06CD /* Info.plist */,
 			);
 			path = "Todo List";
+			sourceTree = "<group>";
+		};
+		C89733D025731FAC00FDBE02 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				C89733D125731FAC00FDBE02 /* libsqlite3.tbd */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -105,6 +125,7 @@
 				TargetAttributes = {
 					C84885D0255EEA31009F06CD = {
 						CreatedOnToolsVersion = 11.7;
+						LastSwiftMigration = 1170;
 					};
 				};
 			};
@@ -144,8 +165,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C89734222574700600FDBE02 /* Todo.swift in Sources */,
 				C84885EB25602425009F06CD /* TasksCellTableViewCell.swift in Sources */,
 				C84885D9255EEA31009F06CD /* ViewController.swift in Sources */,
+				C8973424257478E800FDBE02 /* DBHelper.swift in Sources */,
 				C84885D5255EEA31009F06CD /* AppDelegate.swift in Sources */,
 				C84885D7255EEA31009F06CD /* SceneDelegate.swift in Sources */,
 				C84885ED256038E8009F06CD /* DetailsViewController.swift in Sources */,
@@ -292,6 +315,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = R6FT28YTB3;
 				INFOPLIST_FILE = "Todo List/Info.plist";
@@ -301,6 +325,8 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.julianacarvalho.Todo-List";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Todo List-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -310,6 +336,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = R6FT28YTB3;
 				INFOPLIST_FILE = "Todo List/Info.plist";
@@ -319,6 +346,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.julianacarvalho.Todo-List";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Todo List-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
